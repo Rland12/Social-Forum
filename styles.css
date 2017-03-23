@@ -1,69 +1,74 @@
-/*@-webkit-keyframes background {
+body {
+    animation: colorchange 20s infinite;
+    -webkit-animation: colorchange 20s infinite;
+    background-size: cover;
+     font-family: 'Baloo Bhaina', cursive;
+     text-shadow: 2px 2px black;
+}
+
+@keyframes colorchange {
     0% {
-        background-color: #f99;
+        background: #00FF7F;
     }
-    33% {
-        background-color: #9f9;
+    20% {
+        background: #87CEEB;
     }
-    67% {
-        background-color: #99f;
+    40% {
+        background: #DDA0DD;
+    }
+    60% {
+        background: #FFA07A;
+    }
+    80% {
+        background: #DC143C;
     }
     100% {
-        background-color: #f99;
+        background: #00FF7F;
     }
 }
 
-
-  @keyframes background {
-  0% { background-color: #f99; }
-  33% { background-color: #9f9; }  
-  67% { background-color: #99f; }
-  100% { background-color: #f99; }
-}*/
-
-body {
-    animation: colorchange 20s; 
-    -webkit-animation: colorchange 20s; 
-    background-size: cover;
+@-webkit-keyframes colorchange {
+    0% {
+        background: #00FF7F;
+    }
+    20% {
+        background: #87CEEB;
+    }
+    40% {
+        background: #DDA0DD;
+    }
+    60% {
+        background: #FFA07A;
+    }
+    80% {
+        background: #DC143C;
+    }
+    100% {
+        background: #00FF7F;
+    }
 }
-@keyframes colorchange
-    {
-      0%   {background: #00FF7F;}
-      25%  {background: #87CEEB;}
-      50%  {background: #DDA0DD;}
-      75%  {background: #FFA07A;}
-      100% {background: #DC143C;}
-    }
 
-    @-webkit-keyframes colorchange
-    {
-      0%   {background: #00FF7F;}
-      25%  {background: #87CEEB;}
-      50%  {background: #DDA0DD;}
-      75%  {background: #FFA07A;}
-      100% {background: #DC143C;}
-    }
 .gamer {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin: auto;
     border-radius: 20px;
+    height: 190%;
     width: 60%;
 }
 
 .gamebox {
-    width:60%;
     border: 1px solid black;
     border-width: 2px;
-    border-radius:20px;
+    border-radius: 20px;
     box-sizing: content-box;
 }
 
 .topic {
-    font-family: "Courier New", Courier, monospace;
+     font-family: 'Baloo Bhaina', cursive;
     text-shadow: 2px 1px black;
-    color: red;
+    color: white;
     position: absolute;
     text-align: center;
     margin-left: 50%;
@@ -86,13 +91,15 @@ input {
     font-size: 20px;
     border-radius: 12px;
 }
+#wall{
+    color:white;
+}
 
 #home {
-    font-family: "Courier New", Courier, monospace;
     color: white;
     text-shadow: 2px 2px black;
 }
 
-#home:visited {
+a {
     text-decoration: none;
 }
