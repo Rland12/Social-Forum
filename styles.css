@@ -56,11 +56,10 @@ body {
     border-radius: 20px;
     height: 190%;
     width: 60%;
-    box-shadow:10px 10px 15px black;
+    box-shadow: 10px 10px 15px black;
 }
 
 div {
-   
     height: 200px;
     background-size: cover;
     margin: 40px 0 0 0;
@@ -84,7 +83,6 @@ div {
 }
 
 p {
-    
     text-align: center;
     border: 1px solid black;
     border-width: 2px;
@@ -93,26 +91,27 @@ p {
     font-size: 20px;
     color: white;
     background-color: black;
-    background:-webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .4));
 }
 
 input {
     font-size: 20px;
-    border:2px solid white;
+    border: 2px solid white;
     border-radius: 15px;
     display: inline-block;
-    top:10em;
+    top: 10em;
 }
 
-input[type=textarea]{
+input[type=textarea] {
     transition: width 1s ease-in-out;
+    width: 20%;
 }
 
 input[type=textarea]:focus {
-    transition:1s;
-    outline:none;
-    width:100%;
     border: 2px solid #555;
+    transition: 1s;
+    width: 40%;
+    outline: none;
 }
 
 #wall {
@@ -124,9 +123,10 @@ input[type=textarea]:focus {
     text-shadow: 2px 2px black;
 }
 
-#home:hover{
+#home:hover {
     cursor: pointer;
 }
+
 a {
     text-decoration: none;
 }
