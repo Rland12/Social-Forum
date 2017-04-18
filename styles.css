@@ -56,9 +56,11 @@ body {
     border-radius: 20px;
     height: 190%;
     width: 60%;
+    box-shadow:10px 10px 15px black;
 }
 
 div {
+   
     height: 200px;
     background-size: cover;
     margin: 40px 0 0 0;
@@ -66,7 +68,7 @@ div {
 
 .topic {
     font-family: 'Baloo Bhaina', cursive;
-    text-shadow: 2px 1px black;
+    text-shadow: 2px 2px black;
     color: white;
     position: absolute;
     text-align: center;
@@ -78,9 +80,11 @@ div {
     text-shadow: 2px 1px black;
     color: red;
     transform: scale(1.25) rotate(-5deg);
+    cursor: pointer;
 }
 
 p {
+    
     text-align: center;
     border: 1px solid black;
     border-width: 2px;
@@ -93,15 +97,22 @@ p {
 }
 
 input {
-  
     font-size: 20px;
+    border:2px solid white;
     border-radius: 15px;
- 
+    display: inline-block;
+    top:10em;
 }
 
-input[type=text]:focus {
+input[type=textarea]{
+    transition: width 1s ease-in-out;
+}
+
+input[type=textarea]:focus {
+    transition:1s;
     outline:none;
-    border: 3px solid #555;
+    width:100%;
+    border: 2px solid #555;
 }
 
 #wall {
@@ -113,6 +124,9 @@ input[type=text]:focus {
     text-shadow: 2px 2px black;
 }
 
+#home:hover{
+    cursor: pointer;
+}
 a {
     text-decoration: none;
 }

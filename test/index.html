@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyCTYFasgfTUShWBJPoW0m1s-iCSROZmE8s",
+        authDomain: "social-forum-f8b5f.firebaseapp.com",
+        databaseURL: "https://social-forum-f8b5f.firebaseio.com",
+        storageBucket: "social-forum-f8b5f.appspot.com",
+        messagingSenderId: "1090604756947"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+</head>
+<body>
+
+    <div id="signed-out-view">
+        <button id="sign-in-button">Sign in with Google</button>
+    </div>
+    
+    <div id="signed-in-view" style="display:none;">
+        <header>
+            <button id="sign-out-button">Sign out</button>
+        </header>
+
+        <main>
+            <section id="add-post">
+                <h2>New Post</h2>
+                <form id="message-form" action="#">
+                    <div>
+                        <input type="text" id="new-post-title">
+                        <label for="new-post-title">Post title...</label>
+                    </div>
+                    <div>
+                        <textarea rows="3" id="new-post-message"></textarea>
+                        <label for="new-post-message">Post message...</label>
+                    </div>
+                    <button type="submit">Add post</button>
+                </form>
+            </section>
+
+            <section id="recent-posts-section">
+                <h2>Messages</h2>
+                <div id="recent-posts-list">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
