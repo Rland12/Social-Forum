@@ -6,9 +6,19 @@
     <link rel="stylesheet" href="styles.css" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
-    <script src="script.js"></script>
 
-    <!--<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet"> -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCTYFasgfTUShWBJPoW0m1s-iCSROZmE8s",
+            authDomain: "social-forum-f8b5f.firebaseapp.com",
+            databaseURL: "https://social-forum-f8b5f.firebaseio.com",
+            storageBucket: "social-forum-f8b5f.appspot.com",
+            messagingSenderId: "1090604756947"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
 <body>
@@ -37,18 +47,61 @@
 
 
         <img src='http://www.scass.ae/en/About1/PublishingImages/Pages/staff/nophoto.jpg'>
-        <form>
-
-            <input type="textarea" placeholder="Message" id="text">
-
-            <input id="enter" type="submit" value="Send">
-
-        </form>
+     
     </div>
 
     <div id="wall"></div>
 
+    <div id="signed-out-view">
+        <button id="sign-in-button">Sign in with Google</button>
+    </div>
 
+    <div id="signed-in-view" style="display:none;">
+        <header>
+            <a href="index.html">
+                <button id="sign-out-button">Sign out</button></a>
+        </header>
+
+        <main id="mainpost">
+            <section id="add-post">
+                <h2>New Post</h2>
+                <form id="message-form" action="#">
+                    <div>
+                        <input type="textarea" placeholder="Message" id="new-post-title">
+                        <label for="new-post-title">Post title...</label>
+                    </div>
+                    <div>
+                        <textarea rows="3" id="new-post-message"></textarea>
+                        <label for="new-post-message">Post message...</label>
+                    </div>
+                    <button type="submit">Add post</button>
+                </form>
+            </section>
+
+            <section id="recent-posts-section">
+                <h2>Messages</h2>
+                <div id="recent-posts-list">
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts-js/script.js"></script>
+    <script src="scripts-js/main.js"></script>
+
+    <div class="style-template"></div>
+    <div id="post-template" style="display:none;" class="post">
+        
+        <div class="author-info">
+            <ul>
+            <li><img class="authorPic" src=""></li>
+            <li><div class="author"></div></li>
+            </ul>
+        </div>
+        
+        <div class="title"></div>
+        <div class="text"></div>
+    </div>
+    </div>
 </body>
 
 </html>

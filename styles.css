@@ -3,7 +3,6 @@ body {
     -webkit-animation: colorchange 20s infinite;
     background-size: cover;
     font-family: 'Baloo Bhaina', cursive;
-    text-shadow: 2px 2px black;
 }
 
 @keyframes colorchange {
@@ -60,7 +59,6 @@ body {
 }
 
 div {
-    height: 200px;
     background-size: cover;
     margin: 40px 0 0 0;
 }
@@ -129,4 +127,95 @@ input[type=textarea]:focus {
 
 a {
     text-decoration: none;
+}
+
+#sign-in-button {
+    font-family: 'Baloo Bhaina', cursive;
+    text-shadow: 2px 2px black;
+    border-radius: 4px;
+    font-size: 25px;
+    border: 2px solid darkgreen;
+    background-color: green;
+    margin-left: 10px;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 6px #999;
+}
+
+#sign-in-button:hover {
+    border: 2px solid green;
+    background-color: darkgreen;
+    box-shadow: 0 6px #999;
+}
+
+#sign-in-button:active {
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+#sign-out-button {
+    font-family: 'Baloo Bhaina', cursive;
+    text-shadow: 2px 2px black;
+    border-radius: 4px;
+    font-size: 20px;
+    border: 2px solid darkred;
+    background-color: red;
+    margin-left: 10px;
+    color: white;
+    display: block;
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    text-align: center;
+    box-shadow: 0 6px #999;
+}
+
+#sign-out-button:hover {
+    border: 2px solid red;
+    background-color: darkred;
+    box-shadow: 0 6px #999;
+}
+
+#sign-out-button:active {
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+#mainpost {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.authorPic {
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+}
+
+.post {
+    border: 2px solid grey;
+    border-radius: 4px;
+    padding:0px 25px 2px 25px;
+    margin:0px 0px 10px 0px;
+    background-color: black;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .4));
+    font-size: 20px;
+}
+
+.author-info ul {
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    list-style-type: none;
+    position: relative;
+}
+.author-info ul li{
+    padding:0px;
+   display: inline;
+   float: left;
+   font-size:25px;
 }
