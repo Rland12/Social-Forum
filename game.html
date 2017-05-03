@@ -46,8 +46,8 @@
         <p>On here you can talk about anything thats video game related. From news to console wars, the controller is yours. </p>
 
 
-        <img src='http://www.scass.ae/en/About1/PublishingImages/Pages/staff/nophoto.jpg'>
-     
+        <!--   <img src='http://www.scass.ae/en/About1/PublishingImages/Pages/staff/nophoto.jpg'>-->
+
     </div>
 
     <div id="wall"></div>
@@ -71,7 +71,7 @@
                         <label for="new-post-title">Post title...</label>
                     </div>
                     <div>
-                        <textarea rows="3" id="new-post-message"></textarea>
+                        <input type="textarea" placeholder="Message" id="new-post-message">
                         <label for="new-post-message">Post message...</label>
                     </div>
                     <button type="submit">Add post</button>
@@ -90,16 +90,26 @@
 
     <div class="style-template"></div>
     <div id="post-template" style="display:none;" class="post">
-        
+
         <div class="author-info">
             <ul>
-            <li><img class="authorPic" src=""></li>
-            <li><div class="author"></div></li>
+                <li>
+                    <img class="authorPic" src="">
+                </li>
+                <li>
+                    <div class="author"></div>
+                </li>
             </ul>
         </div>
-        
-        <div class="title"></div>
-        <div class="text"></div>
+
+        <div class="author-post">
+
+            <div class="title"></div>
+            <div class="text">
+                <a class="link" href=""></a>
+            </div>
+            <div class="time"></div>
+        </div>
     </div>
     </div>
 </body>

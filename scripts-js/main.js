@@ -1,6 +1,7 @@
-function createPostElement(postId, title, text, author, authorId, authorPic) {
+function createPostElement(postId, title, text, author, authorId, authorPic, time) {
     var uid = firebase.auth().currentUser.uid;
-
+    //var getTime = new Date();
+    //console.log(getTime);
     // use jQuery to create a post element with the given values
     
    //clones post and updates it each time
@@ -9,21 +10,24 @@ function createPostElement(postId, title, text, author, authorId, authorPic) {
     clone.find(".text").html(text);
     clone.find(".authorPic").attr('src', authorPic );
     clone.find(".author").html(author);
+    clone.find(".time").html(time);
     clone.attr("id", "post" + postId);
     clone.show();
     return clone;
+
+
 }
 
-
 // Saves a new post to the Firebase DB.
-function writeNewPost(uid, username, picture, title, body) {
+function writeNewPost(uid, username, picture, title, body, time) {
     // A post entry.
     var postData = {
         author: username,
         uid: uid,
         body: body,
         title: title,
-        authorPic: picture
+        authorPic: picture,
+        time: time
     };
 
     // Get a key for a new Post.
@@ -37,13 +41,13 @@ function writeNewPost(uid, username, picture, title, body) {
 }
 
 // Creates a new post for the current user.
-function newPostForCurrentUser(title, text) {
+function newPostForCurrentUser(title, text, time) {
     var userId = firebase.auth().currentUser.uid;
     return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
         var username = snapshot.val().username;
         return writeNewPost(firebase.auth().currentUser.uid, username,
             firebase.auth().currentUser.photoURL,
-            title, text);
+            title, text, time);
     });
 }
 
@@ -52,7 +56,7 @@ function fetchDataFromFirebase() {
 
     recentPosts.on('child_added', function(data) {
         var author = data.val().author || 'Anonymous';
-        var post = createPostElement(data.key, data.val().title, data.val().body, author, data.val().uid, data.val().authorPic);
+        var post = createPostElement(data.key, data.val().title, data.val().body, author, data.val().uid, data.val().authorPic, data.val().time);
         $('#recent-posts-list').append(post);
     });
     recentPosts.on('child_changed', function(data) {
@@ -119,10 +123,12 @@ $(document).ready(function() {
         e.preventDefault();
         var text = $('#new-post-message').val();
         var title = $('#new-post-title').val();;
+        var time = new Date()+"";
         if (text && title) {
-            newPostForCurrentUser(title, text);
+            newPostForCurrentUser(title, text, time);
             $('#new-post-message').val('');
             $('#new-post-title').val('');
+           
         }
     });
 });
