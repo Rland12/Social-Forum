@@ -53,20 +53,10 @@ function newPostForCurrentUser(title, text, time) {
 }
 
 function fetchDataFromFirebase() {
-    var recentPosts = firebase.database().ref('posts').limitToLast(100);
+    var user = firebase.database().ref('users').orderByKey().equalTo("DFJQbn6N4ncYuFThbp3apnxdwij2");
 
-    recentPosts.on('child_added', function(data) {
-        var author = data.val().author || 'Anonymous';
-        var post = createPostElement(data.key, data.val().title, data.val().body, author, data.val().uid, data.val().authorPic, data.val().time);
-        $('#recent-posts-list').append(post);
-    });
-    recentPosts.on('child_changed', function(data) {
-        // Do nothing for now, but this lets us update the UI if a post is changed
-        console.log('child changed', data);
-    });
-    recentPosts.on('child_removed', function(data) {
-        // Do nothing for now, but this lets us update the UI if a post is removed
-        console.log('child removed', data);
+    user.on('child_added', function(data) {
+        console.log(data.val());
     });
 }
 

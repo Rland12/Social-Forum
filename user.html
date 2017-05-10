@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <title>Talk Games</title>
     <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" href="user.css" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/2.1.4/linkify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/2.1.4/linkify-jquery.min.js"></script>
@@ -27,10 +27,10 @@
     <a href="index.html">
         <h1 id="home">Social Forum</h1>
     </a>
-
-    <a href="game.html">
-        <h1 class="topic">Games</h1>
-    </a>
+    <div class="userInfo">
+            <img class="authorPic" src="">
+            <div class="author"></div>
+        </div>
 
     <!--  <ul>
         <li><a href="index.html">Index</a></li>
@@ -40,12 +40,8 @@
     </ul> -->
 
     <br>
-
     <div class="gamebox" align="center">
-        <a href="game.html">
-            <img class="gamer" src="topic-images/games.jpg" />
-        </a>
-        <p>On here you can talk about anything thats video game related. From news to console wars, the controller is yours. </p>
+        <p>User's Profile </p>
 
 
         <!--   <img src='http://www.scass.ae/en/About1/PublishingImages/Pages/staff/nophoto.jpg'>-->
@@ -64,55 +60,9 @@
                 <button id="sign-out-button">Sign out</button></a>
         </header>
 
-        <main id="mainpost">
-            <section id="add-post">
-                <h2>New Post</h2>
-                <form id="message-form" action="#">
-                    <div>
-                        <input type="textarea" placeholder="Message" id="new-post-title">
-                        <label for="new-post-title">Post title...</label>
-                    </div>
-                    <div>
-                        <input type="textarea" placeholder="Message" id="new-post-message">
-                        <label for="new-post-message">Post message...</label>
-                    </div>
-                    <button class="submit" type="submit">Add post</button>
-                </form>
-            </section>
-
-            <section id="recent-posts-section">
-                <h2>Messages</h2>
-                <div id="recent-posts-list">
-                </div>
-            </section>
-        </main>
     </div>
     <script src="scripts-js/script.js"></script>
-    <script src="scripts-js/main.js"></script>
-
-    <div class="style-template"></div>
-    <div id="post-template" style="display:none;" class="post">
-
-        <div class="author-info">
-            <ul>
-                <li>
-                    <img class="authorPic" src="">
-                </li>
-                <li>
-                    <div class="author"></div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="author-post">
-
-            <div class="title"></div>
-            <div class="text">
-                <a class="link" href=""></a>
-            </div>
-            <div class="time"></div>
-        </div>
-    </div>
+    <script src="scripts-js/user.js"></script>
     </div>
 </body>
 

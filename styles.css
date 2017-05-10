@@ -48,7 +48,6 @@ body {
 }
 
 .gamer {
-    display: block;
     margin-left: auto;
     margin-right: auto;
     margin: auto;
@@ -100,16 +99,18 @@ input {
     top: 10em;
     outline: none;
 }
+
 #new-post-title {
     transition: width 1s ease-in-out;
     width: 20%;
 }
-#new-post-title:focus{
-     border: 2px solid #555;
+
+#new-post-title:focus {
+    border: 2px solid #555;
     transition: width 1s ease-in-out;
     width: 60%;
-
 }
+
 #new-post-message {
     height: 22px;
     transition: all 1s ease-out;
@@ -122,15 +123,26 @@ input {
     width: 60%;
     height: 200px;
 }
-button{
-    margin-top:3%;
-    font-size:20px;
-    border-radius:5px;
-    background-color:red;
-    color:blue;
-    width:30%;
-    
+
+button.submit {
+    font-family: 'Baloo Bhaina', cursive;
+    text-shadow: 2px 2px black;
+    box-shadow: 0px 6px #999;
+    border: 2px solid darkblue;
+    margin-top: 3%;
+    font-size: 20px;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .2));
+    color: white;
+    width: 30%;
 }
+
+button.submit:hover {
+    border: 2px solid blue;
+    background-color: red;
+    box-shadow: 0px 6px #999;
+}
+
 #wall {
     color: white;
 }
@@ -217,8 +229,6 @@ a {
 
 .title {
     margin-right: 30%;
-    clear: left;
-    display: inline;
     font-size: 30px;
     font-style: italic;
     font-weight: bold;
@@ -227,7 +237,7 @@ a {
 
 .text {
     top: -30px;
-    position: relative;
+    position: static;
     clear: left;
     margin-top: -2px;
 }
@@ -285,7 +295,6 @@ a {
 .author-post {
     text-align: left;
     display: table-cell;
-    width: 75%;
+    width: 55%;
     padding: 0px 0px 0px 100px;
-    margin-top: -100px;
 }
