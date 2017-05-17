@@ -101,34 +101,35 @@ input {
 }
 
 #new-post-title {
-    transition: width 1s ease-in-out;
-    width: 20%;
+    margin-left: 4%;
+    transition: all 1s ease-out;
+    width: 15%;
 }
 
 #new-post-title:focus {
-    border: 2px solid #555;
-    transition: width 1s ease-in-out;
-    width: 60%;
+    transition: all 1s ease-out;
+    width: 25%;
 }
 
 #new-post-message {
+    margin-left: 5%;
     height: 22px;
     transition: all 1s ease-out;
-    width: 30%;
+    width: 20%;
 }
 
 #new-post-message:focus {
     border: 2px solid #555;
     transition: all 1s ease-out;
-    width: 60%;
+    width: 35%;
     height: 200px;
 }
 
 button.submit {
     font-family: 'Baloo Bhaina', cursive;
     text-shadow: 2px 2px black;
-    box-shadow: 0px 6px #999;
-    border: 2px solid darkblue;
+    box-shadow: 3px 6px 6px grey;
+    border: 2px solid #09C;
     margin-top: 3%;
     font-size: 20px;
     border-radius: 15px;
@@ -140,13 +141,33 @@ button.submit {
 button.submit:hover {
     border: 2px solid blue;
     background-color: red;
-    box-shadow: 0px 6px #999;
+    box-shadow: 3px 6px 6px grey;
 }
 
-#wall {
+.response {
+    font-family: 'Baloo Bhaina', cursive;
+    text-shadow: 2px 2px black;
+    box-shadow: 3px 6px 6px grey;
+    border: 2px solid #09C;
+    margin-top: 3%;
+    font-size: 20px;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .2));
     color: white;
+    width: 30%;
 }
 
+button.response:hover {
+    border: 2px solid blue;
+    background-color: red;
+    box-shadow: 3px 6px 6px grey;
+}
+
+/*#wall {
+      background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .2));
+      z-index:-2;
+}
+*/
 #home {
     color: white;
     text-shadow: 2px 2px black;
@@ -158,6 +179,36 @@ button.submit:hover {
 
 a {
     text-decoration: none;
+}
+
+#your-profile {
+    font-family: 'Baloo Bhaina', cursive;
+    text-shadow: 2px 2px black;
+    border-radius: 4px;
+    font-size: 20px;
+    border: 2px solid darkblue;
+    background-color: blue;
+    margin-left: 10px;
+    color: white;
+    display: block;
+    margin-top: 1px;
+    margin-right:100px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    text-align: center;
+    box-shadow: 3px 6px 6px grey;
+}
+
+#your-profile:hover {
+    border: 2px solid blue;
+    background-color: darkblue;
+    box-shadow: 3px 6px 6px grey;
+}
+
+#your-profile:active {
+    box-shadow: 3px 6px 6px grey;
+    transform: translateY(4px);
 }
 
 #sign-in-button {
@@ -176,17 +227,17 @@ a {
     top: 25px;
     right: 25px;
     text-align: center;
-    box-shadow: 0 6px #999;
+    box-shadow: 3px 6px 6px grey;
 }
 
 #sign-in-button:hover {
     border: 2px solid green;
     background-color: darkgreen;
-    box-shadow: 0 6px #999;
+    box-shadow: 3px 6px 6px grey;
 }
 
 #sign-in-button:active {
-    box-shadow: 0 3px #666;
+    box-shadow: 3px 6px 6px grey;
     transform: translateY(4px);
 }
 
@@ -206,17 +257,17 @@ a {
     top: 25px;
     right: 25px;
     text-align: center;
-    box-shadow: 0 6px #999;
+    box-shadow: 3px 6px 6px grey;
 }
 
 #sign-out-button:hover {
     border: 2px solid red;
     background-color: darkred;
-    box-shadow: 0 6px #999;
+    box-shadow: 3px 6px 6px grey;
 }
 
 #sign-out-button:active {
-    box-shadow: 0 3px #666;
+    box-shadow: 3px 6px 6px grey;
     transform: translateY(4px);
 }
 
@@ -243,21 +294,19 @@ a {
 }
 
 .author {
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
+    text-align:center;
 }
 
 .authorPic {
-    float: left;
-    height: 75px;
-    width: 75px;
+    width: 25%;
     border-radius: 50px;
     border: 1px solid grey;
     box-shadow: 5px 5px 10px black;
 }
 
 .authorPic:hover {
-    height: 70px;
-    width: 70px;
+
     transform: scale(1.25) rotate(-5deg);
 }
 
@@ -266,7 +315,7 @@ a {
     border: 2px solid grey;
     border-radius: 4px;
     padding: 0px 0px 0px 0px;
-    margin: 25px 25px 25px 25px;
+    margin: 255px 25px 25px 25px;
     background-color: black;
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, .4));
     font-size: 20px;
@@ -295,6 +344,7 @@ a {
 .author-post {
     text-align: left;
     display: table-cell;
-    width: 55%;
-    padding: 0px 0px 0px 100px;
+    width: 75%;
+    padding: 0px 0px 100px 100px;
+    margin:0px 0px 0px 0px;
 }

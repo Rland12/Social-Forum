@@ -3,21 +3,24 @@ function createPostElement(postId, title, text, author, authorId, authorPic, tim
     //var getTime = new Date();
     //console.log(getTime);
     // use jQuery to create a post element with the given values
-    
-   //clones post and updates it each time
+
+    //clones post and updates it each time
     var clone = $("#post-template").clone();
     clone.find(".title").html(title);
     clone.find(".text").text(text);
     clone.find(".text").linkify(text);
-    clone.find(".authorPic").attr('src', authorPic );
+    clone.find(".authorPic").attr('src', authorPic);
     clone.find(".author").html(author);
     clone.find(".time").html(time);
     clone.attr("id", "post" + postId);
+    clone.find(".replys").attr('value', postId);
     clone.show();
     return clone;
 
 
 }
+
+
 
 // Saves a new post to the Firebase DB.
 function writeNewPost(uid, username, picture, title, body, time) {
@@ -93,6 +96,7 @@ function userSignedInOrOut(user) {
 
         storeUserDataInFirebase(user.uid, user.displayName, user.email, user.photoURL);
         fetchDataFromFirebase();
+        showProfilePic();
     }
     else {
         currentUID = null;
@@ -101,6 +105,13 @@ function userSignedInOrOut(user) {
     }
 }
 
+function showProfilePic() {
+    firebase.database().ref('users/' + currentUID).once('value').then(function(snapshot) {
+        console.log(snapshot.val().profile_picture);
+        $("img.authorPic").attr("src",
+        snapshot.val().profile_picture);
+    });
+}
 
 $(document).ready(function() {
 
@@ -118,18 +129,38 @@ $(document).ready(function() {
     // tell your app what function to call when the user signs in or out
     firebase.auth().onAuthStateChanged(userSignedInOrOut);
 
-
     // Handle the user submitting a new post
     $('#message-form').on('submit', function(e) {
         e.preventDefault();
         var text = $('#new-post-message').val();
         var title = $('#new-post-title').val();;
-        var time = new Date()+"";
+        var time = new Date() + "";
         if (text && title) {
             newPostForCurrentUser(title, text, time);
             $('#new-post-message').val('');
             $('#new-post-title').val('');
-           
+
         }
+    });
+    
+       $('#reply-form').on('submit', function(e) {
+        e.preventDefault();
+        var text = $('#new-post-message').val();
+        var title = $('#new-post-title').val();;
+        var time = new Date() + "";
+        if (text && title) {
+            newPostForCurrentUser(title, text, time);
+            $('#new-post-message').val('');
+            $('#new-post-title').val('');
+
+        }
+    });
+
+
+    $(".reply").hide();
+    $("body").on("click", ".response", function() {
+        $(".reply").toggle(function(){
+        });
+        console.log("hello");
     });
 });
