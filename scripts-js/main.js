@@ -61,7 +61,7 @@ function fetchDataFromFirebase() {
     recentPosts.on('child_added', function(data) {
         var author = data.val().author || 'Anonymous';
         var post = createPostElement(data.key, data.val().title, data.val().body, author, data.val().uid, data.val().authorPic, data.val().time);
-        $('#recent-posts-list').append(post);
+        $('#recent-posts-list').prepend(post);
     });
     recentPosts.on('child_changed', function(data) {
         // Do nothing for now, but this lets us update the UI if a post is changed

@@ -163,11 +163,13 @@ button.response:hover {
     box-shadow: 3px 6px 6px grey;
 }
 
+
 /*#wall {
       background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, .2));
       z-index:-2;
 }
 */
+
 #home {
     color: white;
     text-shadow: 2px 2px black;
@@ -192,7 +194,7 @@ a {
     color: white;
     display: block;
     margin-top: 1px;
-    margin-right:100px;
+    margin-right: 100px;
     position: absolute;
     top: 25px;
     right: 25px;
@@ -279,6 +281,8 @@ a {
 }
 
 .title {
+    margin-top: -15%;
+    position: absolute;
     margin-right: 30%;
     font-size: 30px;
     font-style: italic;
@@ -287,26 +291,26 @@ a {
 }
 
 .text {
-    top: -30px;
-    position: static;
+    top: 10px;
     clear: left;
-    margin-top: -2px;
+    margin-top: -2%;
 }
 
 .author {
+    margin-right: -75%;
     padding: 0px 0px 0px 0px;
-    text-align:center;
+    position: relative;
+    font-size: 25px;
 }
 
 .authorPic {
-    width: 25%;
+    width: 45%;
     border-radius: 50px;
     border: 1px solid grey;
     box-shadow: 5px 5px 10px black;
 }
 
 .authorPic:hover {
-
     transform: scale(1.25) rotate(-5deg);
 }
 
@@ -345,6 +349,8 @@ a {
     text-align: left;
     display: table-cell;
     width: 75%;
+  
     padding: 0px 0px 100px 100px;
-    margin:0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
+
